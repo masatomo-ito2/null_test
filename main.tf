@@ -13,3 +13,7 @@ resource "null_resource" "test" {
 output "sample_var" {
 	value = var.var1
 }
+
+output "ws" {
+	value = terraform.workspace
+}
