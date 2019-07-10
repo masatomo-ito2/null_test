@@ -1,19 +1,16 @@
-variable "var1" {
-	default = "foo"
-}
+variable "ATLAS_WORKSPACE_NAME" {}
 
 resource "null_resource" "test" {
-
   provisioner "local-exec" {
     # Bootstrap script called with private_ip of each node in the clutser
-    command = "touch file"
+    command = "/bin/sh -c env"
   }
 }
 
-output "sample_var" {
-	value = var.var1
+output "ws1" {
+	value = terraform.workspace
 }
 
-output "ws" {
-	value = terraform.workspace
+output "ws2" {
+	value = var.ATLAS_WORKSPACE_NAME
 }
