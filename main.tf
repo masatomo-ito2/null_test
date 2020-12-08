@@ -1,6 +1,7 @@
 variable "API_KEY" {}
 
 # Null test by masa
+# Additional
 
 resource "null_resource" "test" {
   provisioner "local-exec" {
