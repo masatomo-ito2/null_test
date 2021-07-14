@@ -18,6 +18,10 @@ resource "null_resource" "addition" {
 
 resource "random_pet" "pet" {
 	length = 5
+  provisioner "local-exec" {
+    # Bootstrap script called with private_ip of each node in the clutser
+    command = "/bin/sh -c sleep 300"
+  }
 }
 
 output "pet" {
