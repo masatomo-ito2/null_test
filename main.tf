@@ -4,22 +4,19 @@ variable "API_KEY" {}
 # Additional
 
 resource "null_resource" "addition" {
-  provisioner "local-exec" {
-    command = "/bin/sh -c hostname"
-  }
-}
-
-resource "random_pet" "pet" {
-  length = 5
-
   triggers = {
     build_number = timestamp()
   }
 
   provisioner "local-exec" {
     # Bootstrap script called with private_ip of each node in the clutser
-    command = "/bin/sh -c sleep 300"
+    command = "sleep 300"
   }
+}
+
+resource "random_pet" "pet" {
+  length = 5
+
 }
 
 output "pet" {
