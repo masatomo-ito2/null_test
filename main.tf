@@ -16,6 +16,14 @@ resource "null_resource" "addition" {
 	}
 }
 
+resource "random_pet" "pet" {
+	length = 5
+}
+
+output "pet" {
+	value = random_pet.pet.id
+}
+
 output "null_id" {
 	value = null_resource.addition.id
 }
