@@ -6,7 +6,7 @@ variable "API_KEY" {}
 resource "null_resource" "test" {
   provisioner "local-exec" {
     # Bootstrap script called with private_ip of each node in the clutser
-    command = "/bin/sh -c env"
+    command = "/bin/sh -c sleep 300"
   }
 }
 
